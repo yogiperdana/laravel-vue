@@ -15,13 +15,14 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        
         $product = new Product([
             'name' => $request->input('name'),
             'detail' => $request->input('detail')
         ]);
         $product->save();
 
-        return response()->json('Product created!');
+        return response()->json(['message' => 'task was successful']);
     }
 
     public function show($id)
